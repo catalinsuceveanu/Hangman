@@ -1,4 +1,4 @@
-from Week1_homework.round import Round
+from round import Round
 
 
 def print_curr_game_state(curr_round):
