@@ -45,16 +45,14 @@ def main():
             you_lose()
             
 def you_won():
-    print("You won!")
-    print('Another game?')
+    print("You won!\nAnother game?")
     if yes_or_no():
         pass 
     else:
         quit()
 
 def you_lose():
-    print("You lose.")
-    print('Try again?')
+    print("You lose.\nTry again?")
     if yes_or_no():
         pass 
     else:
