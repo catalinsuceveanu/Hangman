@@ -71,7 +71,6 @@ class Round:
 
     def add_letter_to_incomplete_word(self, letter):
         indices = self.get_letter_in_word_and_their_indices()[letter]
-        print(f"letter: {letter}, indices: {indices}")
         curr_word = self.get_incomplete_word()
 
         for index in indices:
