@@ -1,5 +1,4 @@
 from round import Round
-from validation import is_valid
 
 
 def print_curr_game_state(curr_round):
