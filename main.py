@@ -1,4 +1,5 @@
 from round import Round
+from validation import is_valid
 
 
 def print_curr_game_state(curr_round):
@@ -16,7 +17,8 @@ def main():
     curr_round = Round()
     while curr_round.get_no_of_tries_left() > 0:
         letter = print_curr_game_state(curr_round)
-        curr_round.add_letter_to_already_tried_letters(letter)
+        if is_valid(letter, curr_round):
+            curr_round.add_letter_to_already_tried_letters(letter.lower())
 
 
 if __name__ == '__main__':
