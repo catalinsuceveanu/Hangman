@@ -1,8 +1,4 @@
-def is_valid(letter, curr_round):
-    if letter.lower() in curr_round.get_already_tried_letters():
-        print("You have already used this letter. Try again!")
-        return False
-
+def is_valid(letter):
     if len(letter) == 1:
         if letter.isalpha():
             return True

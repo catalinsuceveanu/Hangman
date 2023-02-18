@@ -17,7 +17,7 @@ def main():
     curr_round = Round()
     while curr_round.get_no_of_tries_left() > 0:
         letter = print_curr_game_state(curr_round)
-        if is_valid(letter, curr_round):
+        if is_valid(letter):
             curr_round.add_letter_to_already_tried_letters(letter.lower())
 
 
