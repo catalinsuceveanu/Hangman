@@ -28,12 +28,19 @@ def print_curr_game_state(curr_round):
 
 def main():
     list_of_words = retrieve_words()
-    curr_round = Round(list_of_words)
 
-    while curr_round.get_guesses_left() > 0:
-        letter = print_curr_game_state(curr_round)
-        if is_valid(letter):
-            curr_round.play_a_round(letter.lower())
+    while len(list_of_words) > 0:
+        curr_round = Round(list_of_words)
+
+        while curr_round.get_guesses_left() > 0 and not curr_round.get_the_round_is_won():
+            letter = print_curr_game_state(curr_round)
+            if is_valid(letter):
+                curr_round.play_a_round(letter.lower())
+
+        if curr_round.get_the_round_is_won():
+            print(f"You guessed the word {curr_round.get_the_word()}!\n")
+        else:
+            print(f"You did not guess the word {curr_round.get_the_word()}!\n")
 
 
 if __name__ == '__main__':
