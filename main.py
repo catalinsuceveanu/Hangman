@@ -39,8 +39,41 @@ def main():
 
         if curr_round.get_the_round_is_won():
             print(f"You guessed the word {curr_round.get_the_word()}!\n")
+            you_won()
         else:
             print(f"You did not guess the word {curr_round.get_the_word()}!\n")
+            you_lose()
+            
+def you_won():
+    print("You won!\nAnother game?")
+    if yes_or_no():
+        pass 
+    else:
+        quit()
+
+def you_lose():
+    print("You lose.\nTry again?")
+    if yes_or_no():
+        pass 
+    else:
+        quit()
+    
+def yes_or_no():
+    print('yes or no')
+    x = input('')
+    yes = ['y','yes', 'Y', 'Yes', 'YES']
+    no = ['n', 'N', 'No', 'NO', 'no']
+    if x in yes:
+        print('')
+        return True
+    elif x in no:
+        print('')
+        return False
+    
+    else:
+        print('respond with Yes or No please. (y or n is also accepted)')
+        return yes_or_no()
+    
 
 
 if __name__ == '__main__':
